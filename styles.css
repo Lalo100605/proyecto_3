@@ -1,0 +1,320 @@
+/* ---------- RESETEO GENERAL ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #0b0c10;
+  color: white;
+}
+
+/* ---------- SECCIÓN HERO ---------- */
+.hero {
+  background: linear-gradient(rgba(12, 14, 35, 0.85), rgba(12, 14, 35, 0.85)),
+              url('./img/paisaje.jpg') center/cover no-repeat;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.nav {
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+  right: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.menu {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.hero-content {
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content hr {
+  width: 200px;
+  margin: 1rem auto;
+  border: 1px solid white;
+}
+
+.hero-content p {
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  padding: 0.8rem 2rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: white;
+  color: #0b0c10;
+}
+
+
+/* ---------- SECCIÓN GRID ---------- */
+.grid-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-auto-rows: 300px;              
+  gap: 0;                            
+  width: 100%;
+}
+
+.grid-item:nth-child(1) {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.grid-item:nth-child(2) {
+  grid-column: 2 / 4; 
+  grid-row: 1 / 2;
+}
+
+.grid-item:nth-child(3) {
+  grid-column: 1 / 3; 
+  grid-row: 2 / 3;
+}
+
+.grid-item:nth-child(4) {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+
+.grid-item:nth-child(5) {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+.grid-item:nth-child(6) {
+  grid-column: 2 / 4;
+  grid-row: 3 / 4;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  color: white;
+  padding: 3rem;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.grid-item:hover {
+  transform: scale(1.03);
+  filter: brightness(1.05);
+}
+
+.grid-item h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+}
+
+.grid-item p {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+/* ---------- COLORES E IMÁGENES ---------- */
+.blue {
+  background: linear-gradient(rgba(0,160,255,0.9), rgba(0,160,255,0.9)),
+              url('./img/persona.jpg') center/cover no-repeat;
+}
+
+.purple {
+  background: linear-gradient(rgba(120,60,150,0.9), rgba(120,60,150,0.9)),
+              url('./img/japon.jpg') center/cover no-repeat;
+}
+
+.red {
+  background: linear-gradient(rgba(255,100,80,0.9), rgba(255,100,80,0.9)),
+              url('./img/montania.jpg') center/cover no-repeat;
+}
+
+.orange {
+  background: linear-gradient(rgba(255,180,140,0.9), rgba(255,180,140,0.9)),
+              url('./img/lobo.jpg') center/cover no-repeat;
+}
+
+.indigo {
+  background: linear-gradient(rgba(60,60,150,0.9), rgba(60,60,150,0.9)),
+              url('./img/escaleras.jpg') center/cover no-repeat;
+}
+
+.green {
+  background: linear-gradient(rgba(60,180,140,0.9), rgba(60,180,140,0.9)),
+              url('./img/mujer.jpg') center/cover no-repeat;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1024px) {
+  .grid-section {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 260px;
+  }
+
+  .grid-item {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-section {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
+  }
+
+  .grid-item {
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+  }
+}
+
+/* ---------- ICONO HAMBURGUESA ---------- */
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.hamburger {
+  width: 26px;
+  height: 18px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.hamburger span {
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: white;
+  border-radius: 2px;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+.hamburger span:nth-child(2) {
+  top: 7px;
+}
+.hamburger span:nth-child(3) {
+  top: 14px;
+}
+
+.menu:hover .hamburger span:nth-child(1) {
+  width: 60%;
+  background-color: #00a0ff;
+}
+
+.menu:hover .hamburger span:nth-child(2) {
+  width: 100%;
+  background-color: #00a0ff;
+}
+
+.menu:hover .hamburger span:nth-child(3) {
+  width: 80%;
+  background-color: #00a0ff;
+}
+
+.menu:hover .hamburger {
+  transform: scale(1.1);
+}
+
+/* ---------- SECCIÓN INFORMATIVA ---------- */
+.info-section {
+  background-color: #2b3055;
+  color: #fff;
+  padding: 5rem 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-content {
+  max-width: 900px;
+}
+
+.info-content h2 {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+}
+
+.info-content hr {
+  width: 80px;
+  border: 1px solid #fff;
+  margin-bottom: 1.5rem;
+}
+
+.info-content p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #d4d4d4;
+  margin-bottom: 2rem;
+}
+
+.info-btn {
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  padding: 0.9rem 2rem;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.info-btn:hover {
+  background-color: #fff;
+  color: #2b3055;
+  transform: translateY(-3px);
+}

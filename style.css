@@ -1,0 +1,302 @@
+/* ---------- RESET ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #1E2138;
+    color: #fff;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ---------- HEADER ---------- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #1B1F36;
+}
+
+header .logo {
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 2px;
+    background-color: #2B2F48;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+header .menu {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* ---------- ICONO HAMBURGUESA ---------- */
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.hamburger {
+    width: 26px;
+    height: 18px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.hamburger span {
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.hamburger span:nth-child(1) {
+    top: 0;
+}
+
+.hamburger span:nth-child(2) {
+    top: 7px;
+}
+
+.hamburger span:nth-child(3) {
+    top: 14px;
+}
+
+.menu:hover .hamburger span:nth-child(1) {
+    width: 60%;
+    background-color: #00a0ff;
+}
+
+.menu:hover .hamburger span:nth-child(2) {
+    width: 100%;
+    background-color: #00a0ff;
+}
+
+.menu:hover .hamburger span:nth-child(3) {
+    width: 80%;
+    background-color: #00a0ff;
+}
+
+.menu:hover .hamburger {
+    transform: scale(1.1);
+}
+
+/* ---------- MAIN ---------- */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+main h1 {
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #5C63F6;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+main img {
+    width: 100%;
+    max-width: 2000px;
+    height: 500px;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+main p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* ---------- SECCIÓN CONTACTO ---------- */
+.contact-section {
+    background-color: #1a1f3c;
+    color: #fff;
+    padding: 5rem 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+/* --- Formulario --- */
+.contact-form {
+    flex: 1 1 55%;
+}
+
+.form-group {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.input-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-box label,
+.message-box label {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+}
+
+.input-box input,
+.message-box textarea {
+    background: #252b4a;
+    border: none;
+    padding: 0.8rem;
+    color: #fff;
+    font-size: 0.9rem;
+    resize: none;
+}
+
+.message-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.send-btn,
+.clear-btn {
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.85rem;
+}
+
+.send-btn {
+    background-color: #fff;
+    color: #1a1f3c;
+}
+
+.send-btn:hover {
+    transform: translateY(-3px);
+    background-color: #00a0ff;
+    color: #fff;
+}
+
+.clear-btn:hover {
+    background-color: #fff;
+    color: #1a1f3c;
+    transform: translateY(-3px);
+}
+
+/* --- Información --- */
+.contact-info {
+    flex: 1 1 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-top: 5px;
+}
+
+.info-item h4 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+.info-item p,
+.info-item a {
+    font-size: 0.9rem;
+    color: #d4d4d4;
+    text-decoration: none;
+}
+
+/* --- Footer --- */
+.footer {
+    border-top: 1px solid #2e335c;
+    padding-top: 2rem;
+    text-align: left;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: left;
+    gap: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #00a0ff;
+    transform: translateY(-3px);
+}
+
+.footer p {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.footer span {
+    color: #fff;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .form-group {
+        flex-direction: column;
+    }
+
+    .contact-section {
+        padding: 3rem 8%;
+    }
+}

@@ -15,12 +15,12 @@ body {
 .hero {
   background: linear-gradient(rgba(12, 14, 35, 0.85), rgba(12, 14, 35, 0.85)),
               url('./img/paisaje.jpg') center/cover no-repeat;
-  height: 90vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 2rem;
+  align-items: flex-start; 
+  padding: 2rem 5%;
   position: relative;
 }
 
@@ -38,6 +38,7 @@ body {
   height: 60px;
   width: auto;
   object-fit: contain;
+  transition: all 0.3s ease;
 }
 
 .menu {
@@ -46,7 +47,7 @@ body {
 }
 
 .hero-content {
-  text-align: center;
+  text-align: left;
 }
 
 .hero-content h1 {
@@ -54,34 +55,75 @@ body {
   margin-bottom: 1rem;
 }
 
-.hero-content hr {
-  width: 200px;
-  margin: 1rem auto;
-  border: 1px solid white;
+.info-line-wrapper {
+  display: inline-block; 
 }
 
-.hero-content p {
+.hero-hr {
+  width: 107%; 
+  border: 1px solid #fff;
+  margin: 0.5rem 0;
+}
+
+.hero-info {
+  display: inline-block;       
+  margin-bottom: 0.5rem;
   letter-spacing: 2px;
   font-size: 0.8rem;
   text-transform: uppercase;
-  margin-bottom: 1.5rem;
 }
 
 .btn {
-  border: 1px solid white;
+  border: 2px solid #fff;
   background: transparent;
-  color: white;
-  padding: 0.8rem 2rem;
+  color: #fff;
+  padding: 0.9rem 2rem;
+  font-size: 0.9rem;
   letter-spacing: 2px;
   cursor: pointer;
-  transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
 }
 
 .btn:hover {
-  background-color: white;
+  background-color: #fff;
   color: #0b0c10;
+  transform: translateY(-3px);
 }
 
+/* ---------- RESPONSIVE HERO ---------- */
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    justify-content: center;
+    align-items: center;    
+    text-align: center;
+    padding: 2rem 2rem;
+  }
+
+  .info-line-wrapper {
+    display: block;        
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-info {
+    font-size: 0.8rem;
+  }
+
+  .hero-hr {
+    margin: 0.5rem auto;    
+  }
+
+  .btn {
+    margin-top: 1rem;       
+  }
+}
 
 /* ---------- SECCIÓN GRID ---------- */
 .grid-section {
@@ -287,7 +329,7 @@ body {
 }
 
 .info-content hr {
-  width: 80px;
+  width: 220px;
   border: 1px solid #fff;
   margin-bottom: 1.5rem;
 }
@@ -317,4 +359,286 @@ body {
   background-color: #fff;
   color: #2b3055;
   transform: translateY(-3px);
+}
+
+/* ---------- SECCIÓN CONTACTO ---------- */
+.contact-section {
+  background-color: #1a1f3c;
+  color: #fff;
+  padding: 5rem 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+/* --- Formulario --- */
+.contact-form {
+  flex: 1 1 55%;
+}
+
+.form-group {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.input-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-box label,
+.message-box label {
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+}
+
+.input-box input,
+.message-box textarea {
+  background: #252b4a;
+  border: none;
+  padding: 0.8rem;
+  color: #fff;
+  font-size: 0.9rem;
+  resize: none;
+}
+
+.message-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.send-btn,
+.clear-btn {
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.85rem;
+}
+
+.send-btn {
+  background-color: #fff;
+  color: #1a1f3c;
+}
+
+.send-btn:hover {
+  transform: translateY(-3px);
+  background-color: #00a0ff;
+  color: #fff;
+}
+
+.clear-btn:hover {
+  background-color: #fff;
+  color: #1a1f3c;
+  transform: translateY(-3px);
+}
+
+/* --- Información --- */
+.contact-info {
+  flex: 1 1 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.info-item i {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-top: 5px;
+}
+
+.info-item h4 {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.info-item p,
+.info-item a {
+  font-size: 0.9rem;
+  color: #d4d4d4;
+  text-decoration: none;
+}
+
+/* --- Footer --- */
+.footer {
+  border-top: 1px solid #2e335c;
+  padding-top: 2rem;
+  text-align: left;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: left;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #00a0ff;
+  transform: translateY(-3px);
+}
+
+.footer p {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.footer span {
+  color: #fff;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .form-group {
+    flex-direction: column;
+  }
+
+  .contact-section {
+    padding: 3rem 8%;
+  }
+}
+
+/* ---------- MENÚ POPUP ---------- */
+.menu-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 20, 50, 0.97);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.4s ease;
+  z-index: 999;
+}
+
+.menu-popup.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.menu-popup-content {
+  text-align: center;
+  position: relative;
+}
+
+.menu-popup-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-popup-content li {
+  margin: 1.5rem 0;
+}
+
+.menu-popup-content a {
+  color: #fff;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.menu-popup-content a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 1px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+.menu-popup-content a:hover::after {
+  width: 60%;
+}
+
+.popup-btn {
+  border: 2px solid #fff;
+  background: #fff;
+  color: #0b0c10 !important;
+  padding: 0.7rem 1.5rem;
+  display: inline-block;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.popup-btn:hover {
+  background: transparent;
+  color: #fff !important;
+}
+
+/* ---------- BOTÓN CERRAR ---------- */
+.close-btn {
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  font-size: 2rem;
+  color: #fff;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.close-btn:hover {
+  transform: rotate(90deg);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .menu-popup-content a {
+    font-size: 0.9rem;
+  }
+
+  .close-btn {
+    top: -60px;
+    right: -40px;
+    font-size: 1.8rem;
+  }
 }
